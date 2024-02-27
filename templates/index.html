@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBVideoPlayer2 Web UI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/client.js') }}"></script>
+</head>
+<body>
+    <h1>GBVideoPlayer2 Web UI</h1>
+    <h1>Upload:</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        Video File: <input type="file" id="uploadFile" name="file" accept="video/*">
+        Quality: <input type="number" id="optionQuality" value="4" min="0" max="10">
+        <input type="button" id="uploadButton" class="button" value="Make it!">
+    </form>
+    <h1>Download:</h1>
+    Compiled GBC rom: <input type="text" id="compiledfileName" value="No file compiled" readonly>
+    <button onclick="downloadFile()" id="downloadButton" class="button">Download</button>
+    <h1>Log:</h1>
+    <textarea id="webLog" rows="20" cols="80" readonly></textarea>
+    <div class="overlay" id="overlay">
+        <div class="spinner"></div>
+    </div>
+</body>
+</html>
